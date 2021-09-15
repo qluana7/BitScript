@@ -14,9 +14,7 @@ namespace BitScript
                 bool.TryParse(args.Length >= 2 ? args[1] : "false", out var r1) ? r1 : false,
                 bool.TryParse(args.Length >= 3 ? args[2] : "false", out var r2) ? r2 : false);
             
-            var s = Run(args[0]);
-            
-            Console.WriteLine($"\n{string.Join('\n', s.Select(l => Convert.ToString(l, 2).PadLeft(8, '0')))}");
+            Run(args[0]);
         }
         
         static Stack<byte> Run(string code)
