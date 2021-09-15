@@ -170,7 +170,7 @@ namespace BitScript
                                 
                                 _logger.LogLine($"Input Value : {k}");
                                 
-                                MainStack.Push((byte)k);
+                                MainStack.Push((byte)(k % 256));
                             }
                             else if (atc == '>')
                             {
