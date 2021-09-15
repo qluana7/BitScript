@@ -21,7 +21,7 @@ namespace BitScript
         
         static Stack<byte> Run(string code)
         {
-            code = code.Replace(" ", string.Empty);
+            code = code.Replace(" ", string.Empty).Replace("\n", string.Empty);
             
             Stack<byte> MainStack = new Stack<byte>();
             
