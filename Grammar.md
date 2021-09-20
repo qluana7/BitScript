@@ -1,35 +1,46 @@
-### Note
+## Note
 
-- Byte size rule
+Byte size rule
 
-All data in stack must be store with byte(8bits) type.
-
+- All data in stack must be store with byte(8bits) type.
 I'm considering changing data type to int(32bits) type or short(16bits) type
 
-- Bit input operation
+Bit input Operator
 
-'[]' must used with three bit operation. In '[]', + means 1, - means 0.
+- '[]' must used with three bit operators. In '[]', + means 1, - means 0.
 
-For example, if operation is [++-], it becomes "0000 0110".
+- For example, if operator is [++-], it becomes "0000 0110".
 
-- Input Stream Operation
+Input Stream Opetator
 
-@< operation read ascii code from keyboard. Then, it must do mod calculate by 256 to make byte type.
+- @< operator read ascii code from keyboard. Then, it must do mod calculate by 256 to make byte type.
 
-Like this
+Example:
 ```cs
 var k = (int)Console.ReadKey(true).KeyChar;
 
 Stack.Push((byte)(k % 256));
 ```
+Stack Rules
 
-### Stack Operation
+- All bitwise operatoes pop two values and push them after calculate them.
+If there is no value to pop, ignore operator.
+
+Code Analysis Rules
+
+- When analysis code, interpreter must ignore following characters:
+
+- ` (space)`, `\n(newline)`, `\t(tab)`, `\r(CR)`, all non-ascii characters and unknown command.
+
+## Operators
+
+### Stack Operators
 - $<[]  			= push
 - $>    			= pop
 
 - ;				    = copy last stack bits. 
 
-### Bitwise Operation
+### Bitwise Operators
 
 - |     			= or
 - &     			= and
@@ -41,7 +52,7 @@ Stack.Push((byte)(k % 256));
 - <<[]   			= left shift
 - \>>[]			  = right shift
 
-### IO Stream Operation
+### IO Stream Operators
 
 - @<    			= read from input
 - @>    			= write to output
