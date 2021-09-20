@@ -43,8 +43,8 @@ namespace BitScript
                             }
                             else if (c2 == '>')
                             {
+                                _logger.LogLine("Action : pop");
                                 MainStack.TryPop(out var _);
-                                _logger.LogLine("Pop");
                             }
                             else
                             {
@@ -264,7 +264,7 @@ namespace BitScript
                     else
                     {
                         CodeStack.Push(c4);
-                        _logger.LogLine("Check final Failed.");
+                        _logger.LogLine("Final check Failed.");
                    }
                 }
                 
